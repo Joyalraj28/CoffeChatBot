@@ -14,7 +14,7 @@ CORS(app)
 
 api = Api(app)
 
-class Items(Resource):
+class ChatBot(Resource):
     def __init__(self):
         super().__init__()
     def get(self):
@@ -38,7 +38,7 @@ class Items(Resource):
         except Exception  as e:
             return {'message': e.args}, 404
          
-api.add_resource(Items, '/')
+api.add_resource(ChatBot, '/')
 
 if __name__ == '__main__':
     app.run(debug=True)

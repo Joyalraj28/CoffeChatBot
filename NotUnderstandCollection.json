@@ -1,0 +1,26 @@
+{
+    "268": {
+        "patterns": "I whan coffee",
+        "RequestCount": 2
+    },
+    "732": {
+        "patterns": "ji",
+        "RequestCount": 2
+    },
+    "866": {
+        "patterns": "hello",
+        "RequestCount": 1
+    },
+    "222": {
+        "patterns": "helo",
+        "RequestCount": 1
+    },
+    "425": {
+        "patterns": "hi",
+        "RequestCount": 6
+    },
+    "927": {
+        "patterns": "how are you",
+        "RequestCount": 2
+    }
+}
