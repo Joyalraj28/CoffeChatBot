@@ -26,5 +26,27 @@
             }
         },
         "Total": 3
+    },
+    "3": {
+        "items": {
+            "0": {
+                "Name": "Espresso",
+                "Price": 3.5,
+                "Qty": 1,
+                "Type": "Coffee"
+            }
+        },
+        "Total": 3
+    },
+    "4": {
+        "items": {
+            "4": {
+                "Name": "Muffin",
+                "Price": 3,
+                "Qty": 1,
+                "Type": "Pastry"
+            }
+        },
+        "Total": 3
     }
 }

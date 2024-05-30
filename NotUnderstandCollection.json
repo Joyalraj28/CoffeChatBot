@@ -58,5 +58,17 @@
     "92_Not_UnderStand": {
         "patterns": "tiktok",
         "RequestCount": 2
+    },
+    "892_Not_UnderStand": {
+        "patterns": "test",
+        "RequestCount": 2
+    },
+    "933_Not_UnderStand": {
+        "patterns": "Order me Cappuccino",
+        "RequestCount": 2
+    },
+    "666_No_item_Found": {
+        "patterns": "I whant black coffee",
+        "RequestCount": 1
     }
 }
