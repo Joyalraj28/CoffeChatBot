@@ -39,7 +39,8 @@
         "This is good",
         "That's awesome",
         "That's Nice",
-        "Okay"
+        "Okay",
+        "Ok"
       ],
       "responses": [
         "Happy to help!",
@@ -58,7 +59,9 @@
         "What is in the menu?",
         "Menu",
         "Give me menu",
-        "what are food are you offer"
+        "what are food are you offer",
+        "any think special for today"
+
       ],
       "responses": [
         "Sure! Here are our menu categories:\n",
@@ -120,6 +123,7 @@
       ],
       "responses": [
         "The order will take between 10 to 15 mins to reach you. Else your coffee is free."
+        
       ]
     },
     {
@@ -135,7 +139,11 @@
         "How can I order?"
       ],
       "responses": [
-        "Just type 'Order me a black coffee'. I will send the order right on your table. You dont need to wait in lines :)"
+        "Just type 'Order me a black coffee'. I will send the order right on your table. You dont need to wait in lines :)",
+        "I help with menu info, place orders, and answer questions.",
+        "We offer pickup, delivery, and curbside service.",
+        "You can order here, on our website, or through our app."
+
       ]
     },
     {

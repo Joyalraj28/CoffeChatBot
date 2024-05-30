@@ -46,5 +46,17 @@
     "664_Not_UnderStand": {
         "patterns": "food",
         "RequestCount": 2
+    },
+    "959_Not_UnderStand": {
+        "patterns": "ok",
+        "RequestCount": 2
+    },
+    "510_Not_UnderStand": {
+        "patterns": "any think special for today",
+        "RequestCount": 1
+    },
+    "92_Not_UnderStand": {
+        "patterns": "tiktok",
+        "RequestCount": 2
     }
 }
