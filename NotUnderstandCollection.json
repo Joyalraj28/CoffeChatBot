@@ -1,26 +1,50 @@
 {
-    "268": {
+    "268_Not_UnderStand": {
         "patterns": "I whan coffee",
         "RequestCount": 2
     },
-    "732": {
+    "732_Not_UnderStand": {
         "patterns": "ji",
         "RequestCount": 2
     },
-    "866": {
+    "866_Not_UnderStand": {
         "patterns": "hello",
         "RequestCount": 1
     },
-    "222": {
+    "222_Not_ UnderStand": {
         "patterns": "helo",
         "RequestCount": 1
     },
-    "425": {
+    "425_Not_UnderStand": {
         "patterns": "hi",
         "RequestCount": 6
     },
-    "927": {
+    "927_Not_UnderStand": {
         "patterns": "how are you",
+        "RequestCount": 2
+    },
+    "955_Not_UnderStand": {
+        "patterns": "i need coffee",
+        "RequestCount": 3
+    },
+    "38_Not_UnderStand": {
+        "patterns": "give me menu",
+        "RequestCount": 1
+    },
+    "940_No_item_Found": {
+        "patterns": "Order me a black coffee",
+        "RequestCount": 3
+    },
+    "482_Not_UnderStand": {
+        "patterns": "tt",
+        "RequestCount": 2
+    },
+    "519_Not_UnderStand": {
+        "patterns": "ttt",
+        "RequestCount": 1
+    },
+    "664_Not_UnderStand": {
+        "patterns": "food",
         "RequestCount": 2
     }
 }

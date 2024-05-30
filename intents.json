@@ -56,7 +56,9 @@
         "Show me menu.",
         "What do you have in the menu?",
         "What is in the menu?",
-        "Menu"
+        "Menu",
+        "Give me menu",
+        "what are food are you offer"
       ],
       "responses": [
         "Sure! Here are our menu categories:\n",
@@ -67,7 +69,7 @@
         "Here's what we offer:\n",
         "We have a great selection! The main categories are:\n",
         "Sure thing! Our menu includes:\n",
-        "Here\u00e2\u20ac\u2122s the menu for you:\n",
+        "Here's the menu for you:\n",
         "Our menu features a variety of options like\n",
         "Sure! Our menu includes delicious options like \n",
         "Here's what we serve:\n",
@@ -138,7 +140,7 @@
     },
     {
       "tag": "order",
-      "patterns": ["Order me a Black Coffee.", "I want a Black Coffee.", "Give me a Black Coffee.", "Bring me a Black Coffee.", "Give me a Black Coffee.", "Can you order me a Black Coffee?", "Can you give me a Black Coffee?", "Order me a Cold Coffee.", "I want a Cold Coffee.", "Give me a Cold Coffee.", "Bring me a Cold Coffee.", "Give me a Cold Coffee.", "Can you order me a Cold Coffee?", "Can you give me a Cold Coffee?", "Order me a Espresso.", "I want a Espresso.", "Give me a Espresso.", "Bring me a Espresso.", "Give me a Espresso.", "Can you order me a Espresso?", "Can you give me a Espresso?", "Order me a Hot Choclate.", "I want a Hot Choclate.", "Give me a Hot Choclate.", "Bring me a Hot Choclate.", "Give me a Hot Choclate.", "Can you order me a Hot Choclate?", "Can you give me a Hot Choclate?"],
+      "patterns": ["Order me a Coffee.", "I want a Coffee.", "Give me a Coffee.", "Bring me a Coffee.", "Give me a Coffee.", "Can you order me a Coffee?", "Can you give me a Coffee?", "Order me a Cold Coffee.", "I want a Cold Coffee.", "Give me a Cold Coffee.", "Bring me a Cold Coffee.", "Give me a Cold Coffee.", "Can you order me a Cold Coffee?", "Can you give me a Cold Coffee?", "Order me a Espresso.", "I want a Espresso.", "Give me a Espresso.", "Bring me a Espresso.", "Give me a Espresso.", "Can you order me a Espresso?", "Can you give me a Espresso?", "Order me a Hot Choclate.", "I want a Hot Choclate.", "Give me a Hot Choclate.", "Bring me a Hot Choclate.", "Give me a Hot Choclate.", "Can you order me a Hot Choclate?", "Can you give me a Hot Choclate?"],
       "responses": [
         "giving_order"
       ]

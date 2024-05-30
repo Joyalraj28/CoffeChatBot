@@ -8,6 +8,7 @@ import nltk
 from nltk.corpus import wordnet
 from JNodeDB import JNodeDB
 import pandas as pd
+import re
 
 # nltk.download('wordnet')
 
@@ -30,6 +31,8 @@ model_state = data["model_state"]
 NotUnderstandCollection = JNodeDB("NotUnderstandCollection")
 #Food Table
 FoodTable = JNodeDB("FoodTable")
+#Order table
+OrderTable = JNodeDB("OrderTable")
 
 
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
@@ -37,9 +40,81 @@ model.load_state_dict(model_state)
 model.eval()
 
 
+def order(text):
+    order = {}
+    prices = []
+    total = 0
+    
+    ordersjson = OrderTable.readJson()
+    orderid = len(ordersjson.keys())+1
+
+    selectitems = {}
+    items = FoodTable.readJson()
+    id = 1
+    for i in items:
+        search = re.findall(items[i]["Name"], text)
+        for value in search:
+            if value not in order:
+                order[i] ={
+                     "Name": items[i]["Name"],
+                     "Price": items[i]["Price"],
+                     "Qty": 1,
+                     "Type": items[i]["Type"]
+                }
+                selectitems[id] = {
+                   "Name": items[i]["Name"],
+                   "Price":str(items[i]["Price"])+"/="
+                }
+                total += int(items[i]["Price"])
+                id+=1
+    if len(selectitems) > 0:
+        OrderTable.createEntry(orderid,{"items":order,"Total":total})
+
+        order_items =pd.DataFrame.from_dict(selectitems, orient='index')
+        output = "ORDER PLACED.\n"+str(order_items)+"\nTotal : "+str(total)+"/="
+    else:
+        jsondis = NotUnderstandCollection.readJson()
+        key = [i for i in jsondis if jsondis[i]['patterns'] == text]
+        if key != None and len(key) > 0:
+               count =  int(jsondis[key[0]]['RequestCount'])
+               count+=1
+               NotUnderstandCollection.updateEntry(key[0],{"patterns":text,"RequestCount":count})
+        else:
+            randomkey = random.randint(1, 1000)
+            NotUnderstandCollection.createEntry(str(randomkey)+"_No_item_Found",{"patterns":text,"RequestCount":1})
+        return "Sorry! currently this items not available.we are discussing about add this item in menu"
+        
+  
+    return output
+
+
+
+def askprice(text):
+    
+    selectitems = {}
+    items = FoodTable.readJson()
+    list =[]
+    id = 1
+    for i in items:
+        search = re.findall(items[i]["Name"], text)
+        for value in search:
+            if value not in selectitems:
+                list.append(items[i]["Name"])
+                selectitems[id] = {
+                   "Name": items[i]["Name"],
+                   "Price":str(items[i]["Price"])+"/="
+                }
+                id+=1
+
+    data = ",".join(list)
+    summary = "Price of "+data+"\n"+str(pd.DataFrame.from_dict(selectitems, orient='index'))
+    return summary
+
+
 
 def reply(response):
     sentence = tokenize(response)
+    text = response
                                                                     
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
@@ -60,29 +135,31 @@ def reply(response):
                 if tag == "menu":
                     fooddata = FoodTable.readJson()
                     menudata = pd.DataFrame.from_dict(fooddata, orient='index')
-                    return response+menudata
+                    return response+str(menudata)
                 elif str(response).strip() == "asking_prices":
-                    return None
+                    return askprice(text)
                 elif str(response).strip() == "giving_order":
-                    response = order(response)
+                    response = order(text)
                     return response
                 else:
                     return response
-            else:
-                jsondis = NotUnderstandCollection.readJson()
-                key = [i for i in jsondis if jsondis[i]['patterns'] == input]
-                if key != None and len(key) > 0:
-                       count =  int(jsondis[key[0]]['RequestCount'])
-                       count+=1
-                       NotUnderstandCollection.updateEntry(key[0],{"patterns":input,"RequestCount":count})
-                       return "Sorry! Currently, I am trying to train to answer question"
+    else:
+        jsondis = NotUnderstandCollection.readJson()
+        key = [i for i in jsondis if jsondis[i]['patterns'] == response]
+        if key != None and len(key) > 0:
+               count =  int(jsondis[key[0]]['RequestCount'])
+               count+=1
+               NotUnderstandCollection.updateEntry(key[0],{"patterns":response,"RequestCount":count})
+               return "Sorry! I don't understand this question now. I am currently trying to understand this question."
+        else:
+            randomkey = random.randint(1, 1000)
+            NotUnderstandCollection.createEntry(str(randomkey)+"_Not_UnderStand",{"patterns":response,"RequestCount":1})
+            return "Sorry! I did not understand this."
 
-                else:
-                    randomkey = random.randint(1, 1000)
-                    NotUnderstandCollection.createEntry(randomkey,{"patterns":input,"RequestCount":1})
-                    return "Sorry! I did not understand this."
-                
-reply("Which items do you have?")
 
+
+# while True:
+#     txt = input(">> ")
+#     print(reply(txt))
    
     

@@ -16,7 +16,9 @@ class JNodeDB:
 
 
     def readJson(self):
-        self.__init__(self.Node)
+        if not os.path.exists(self.getCurrent_working_directory(self.Node)):
+            with open(self.getCurrent_working_directory(self.Node), 'w') as file:
+                json.dump({}, file)
         """Read data from the JSON file."""
         with open(self.getCurrent_working_directory(self.Node), 'r') as file:
             return json.load(file)
