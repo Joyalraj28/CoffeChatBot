@@ -106,9 +106,23 @@ def askprice(text):
                 }
                 id+=1
 
-    data = ",".join(list)
-    summary = "Price of "+data+"\n"+str(pd.DataFrame.from_dict(selectitems, orient='index'))
-    return summary
+    if len(list) > 0:
+        data = ",".join(list)
+        summary = "Price of "+data+"\n"+str(pd.DataFrame.from_dict(selectitems, orient='index'))
+        return summary
+    else:
+        jsondis = NotUnderstandCollection.readJson()
+        key = [i for i in jsondis if jsondis[i]['patterns'] == text]
+        if key != None and len(key) > 0:
+               count =  int(jsondis[key[0]]['RequestCount'])
+               count+=1
+               NotUnderstandCollection.updateEntry(key[0],{"patterns":text,"RequestCount":count})
+        else:
+            randomkey = random.randint(1, 1000)
+            NotUnderstandCollection.createEntry(str(randomkey)+"_No_item_Found",{"patterns":text,"RequestCount":1})
+        return "Sorry! currently this items not available.we are discussing about add this item in menu"
+        
+        
 
 
 

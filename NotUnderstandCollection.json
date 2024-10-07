@@ -70,5 +70,25 @@
     "666_No_item_Found": {
         "patterns": "I whant black coffee",
         "RequestCount": 1
+    },
+    "942_No_item_Found": {
+        "patterns": "what is price of tt",
+        "RequestCount": 4
+    },
+    "114_No_item_Found": {
+        "patterns": "what price of apple",
+        "RequestCount": 1
+    },
+    "748_No_item_Found": {
+        "patterns": "what price of took",
+        "RequestCount": 1
+    },
+    "636_No_item_Found": {
+        "patterns": "what is price tookkk",
+        "RequestCount": 1
+    },
+    "474_No_item_Found": {
+        "patterns": "what is price of ttttk",
+        "RequestCount": 1
     }
 }
