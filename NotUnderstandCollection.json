@@ -90,5 +90,21 @@
     "474_No_item_Found": {
         "patterns": "what is price of ttttk",
         "RequestCount": 1
+    },
+    "473_Not_UnderStand": {
+        "patterns": "i whan coffee",
+        "RequestCount": 1
+    },
+    "223_Not_UnderStand": {
+        "patterns": "prices of coffee",
+        "RequestCount": 1
+    },
+    "515_Not_UnderStand": {
+        "patterns": "price of coffee",
+        "RequestCount": 2
+    },
+    "177_No_item_Found": {
+        "patterns": "What is the price coffee?",
+        "RequestCount": 1
     }
 }

@@ -145,6 +145,7 @@ def reply(response):
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
+                print(intent['tag'])
                 response =  random.choice(intent['responses'])
                 if tag == "menu":
                     fooddata = FoodTable.readJson()

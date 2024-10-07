@@ -92,7 +92,8 @@
         "Show me prices.",
         "What do you have the price for this?",
         "prices",
-        "How much does the items costs"
+        "How much does the items costs",
+        "price of item"
       ],
       "responses": [
         "asking_prices"
